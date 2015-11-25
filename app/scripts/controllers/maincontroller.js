@@ -7,8 +7,7 @@
  * # MaincontrollerCtrl
  * Controller of the balderSiteApp
  */
-angular.module('balderSiteApp')
-  .controller('MaincontrollerCtrl', function () {
+balderSiteApp.controller('MainController', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

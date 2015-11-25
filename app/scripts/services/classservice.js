@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc service
- * @name balderSiteApp.MainService
+ * @name balderSiteApp.ClassService
  * @description
- * # MainService
+ * # ClassService
  * Service in the balderSiteApp.
  */
-balderSiteApp.service('MainService', function () {
+balderSiteApp.service('ClassService', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
   });

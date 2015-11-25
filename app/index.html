@@ -17,7 +17,7 @@
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"\>
   </head>
-  <body layout="row" ng-controller="AppCtrl">
+  <body layout="row" ng-controller="LayoutController">
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
        <md-toolbar class="md-tall md-hue-2">
          <span flex></span>
@@ -34,8 +34,8 @@
            <md-item-content md-ink-ripple layout="row" layout-align="start center">
              <div class="inset">
                <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-             </div>
-             <div class="inset">{{item.title}}
+               <a href="{{item.link}}" class="inset">{{item.title}}
+               </a>
              </div>
            </md-item-content>
          </a>
@@ -144,6 +144,11 @@
         <script src="scripts/services/mainservice.js"></script>
         <script src="scripts/controllers/lessoncontroller.js"></script>
         <script src="scripts/services/lessonservice.js"></script>
+        <script src="scripts/controllers/classcontroller.js"></script>
+        <script src="scripts/services/classservice.js"></script>
+        <script src="scripts/controllers/layoutcontroller.js"></script>
+        <script src="scripts/controllers/listbottomsheet.js"></script>
+        <script src="scripts/directives/useravatar.js"></script>
         <!-- endbuild -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
 </body>
