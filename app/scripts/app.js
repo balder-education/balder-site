@@ -1,4 +1,4 @@
-var balderSiteApp = angular.module('balderSiteApp', ['ngRoute', 'ngMaterial', 'ngMdIcons']);
+var balderSiteApp = angular.module('balderSiteApp', ['ngRoute', 'ngResource', 'ngMaterial', 'ngMdIcons']);
 
 function DialogController($scope, $mdDialog) {
   $scope.hide = function() {
@@ -11,6 +11,8 @@ function DialogController($scope, $mdDialog) {
     $mdDialog.hide(answer);
   };
 };
+
+balderSiteApp.constant("API_BASE_URL", "http://localhost:7777/");
 
 balderSiteApp.config(function($routeProvider, $mdThemingProvider) {
   $routeProvider.when('/', {
