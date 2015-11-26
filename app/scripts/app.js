@@ -15,9 +15,13 @@ function DialogController($scope, $mdDialog) {
 balderSiteApp.constant("API_BASE_URL", "http://localhost:7777/");
 
 balderSiteApp.config(function($routeProvider, $mdThemingProvider) {
-  $routeProvider.when('/', {
-             templateUrl: 'views/main.html',
-             controller: 'MainController'
+  $routeProvider.when('/login', {
+             templateUrl: 'views/login.html',
+             controller: 'LoginController'
+  })
+  .when('/', {
+            templateUrl: 'views/main.html',
+          	controller: 'MainController'
   })
   .when('/lesson', {
             templateUrl: 'views/lesson.html',
@@ -30,7 +34,8 @@ balderSiteApp.config(function($routeProvider, $mdThemingProvider) {
   .when('/class/:id', {
             templateUrl: 'views/class.html',
             controller: 'ClassController'
-  });
+
+  }).otherwise({ redirectTo: '/login'});
 
   var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
     'contrastDefaultColor': 'light',
