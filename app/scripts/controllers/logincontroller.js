@@ -8,7 +8,7 @@
  * Controller of the balderSiteApp
  */
 angular.module('balderSiteApp')
-  .controller('LogincontrollerCtrl', function ($scope, $http, $window, $location, $rootScope, UserService) {
+  .controller('LoginController', function ($scope, $http, $window, $location, $rootScope, LoginService) {
     $scope.user = {};
     $scope.user.email = '';
     $scope.user.password = '';
@@ -19,7 +19,7 @@ angular.module('balderSiteApp')
         console.log('login' + $scope.user.username);
         console.log('senha' + $scope.user.password);
 
-        UserService.get({'username' : $scope.user.username}, function(user){
+        LoginService.get({'username' : $scope.user.username}, function(user){
         	 if (user != null){
         		 console.log('teste' + user.username + '' + user.password );
 

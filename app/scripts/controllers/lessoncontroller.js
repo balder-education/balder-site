@@ -8,25 +8,5 @@
  * Controller of the balderSiteApp
  */
 balderSiteApp.controller('LessonController', function ($scope, LessonService) {
-    $scope.lessons1 = LessonService.query();
-    $scope.lessons = [
-      {
-        id:1,
-        name: 'name1',
-        description: 'description1',
-        classId:1
-      },
-      {
-        id:2,
-        name: 'name2',
-        description: 'description2',
-        classId:1
-      },
-      {
-        id:3,
-        name: 'name3',
-        description: 'description3',
-        classId:1
-      }
-    ];
-  });
+    $scope.lessons = LessonService.query();
+});

@@ -8,7 +8,7 @@
  * Service in the balderSiteApp.
  */
 balderSiteApp.service('MainService', function ($resource, API_BASE_URL) {
-  return $resource(API_BASE_URL + 'app/controls/:id', {
+  return $resource(API_BASE_URL + '/controls/:id', {
               id : '@id'
               }, {
               query : {

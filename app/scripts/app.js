@@ -12,7 +12,13 @@ function DialogController($scope, $mdDialog) {
   };
 };
 
-balderSiteApp.constant("API_BASE_URL", "http://localhost:7777/");
+balderSiteApp.constant("API_BASE_URL", "http://localhost:7777/app");
+
+balderSiteApp.run(function($http) {
+	//$http.defaults.headers.common.Authorization = 'Basic cm9vdDpyb290==';
+  //$http.defaults.useXDomain = true;
+  //delete $http.defaults.headers.common['X-Requested-With'];
+});
 
 balderSiteApp.config(function($routeProvider, $mdThemingProvider) {
   $routeProvider.when('/login', {

@@ -8,12 +8,12 @@
  * Service in the balderSiteApp.
  */
 balderSiteApp.service('LessonService', function ($resource, API_BASE_URL) {
-  return $resource(API_BASE_URL + 'app/lessons/:id', {
+  return $resource(API_BASE_URL + '/lessons/:id', {
               id : '@id'
               }, {
               query : {
                 method : 'GET',
-                isArray : false
+                isArray : true
               },
               get : {
                 method : 'GET'

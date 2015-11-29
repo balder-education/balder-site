@@ -10,10 +10,8 @@
 
 balderSiteApp.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) {
     $scope.items = [
-      { name: 'Share', icon: 'share' },
-      { name: 'Upload', icon: 'upload' },
-      { name: 'Copy', icon: 'copy' },
-      { name: 'Print this page', icon: 'print' },
+      { name: 'Sobre', icon: 'share' },
+      { name: 'Logout', icon: 'upload' },
     ];
 
     $scope.listItemClick = function($index) {
