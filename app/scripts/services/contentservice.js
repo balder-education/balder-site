@@ -7,7 +7,34 @@
  * # ContentService
  * Service in the balderSiteApp.
  */
-angular.module('balderSiteApp')
-  .service('ContentService', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+balderSiteApp.service('ContentService', function ($resource, API_BASE_URL) {
+  return $resource(API_BASE_URL + '/contents/lesson/:id', {
+            id : '@id'
+            }, {
+            query : {
+              method : 'GET',
+              isArray : true,
+              params : {
+                id : '@id'
+              }
+            },
+            get : {
+              method : 'GET'
+            },
+            remove : {
+              method : 'DELETE',
+              params : {
+                id : '@id'
+              }
+            },
+            update : {
+              method : 'PUT',
+              params : {
+                id : '@id'
+              }
+            },
+            add : {
+              method : 'POST'
+            }
+        });
+});

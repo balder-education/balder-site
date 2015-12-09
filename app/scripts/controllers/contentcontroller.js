@@ -7,11 +7,9 @@
  * # ContentcontrollerCtrl
  * Controller of the balderSiteApp
  */
-angular.module('balderSiteApp')
-  .controller('ContentcontrollerCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+balderSiteApp.controller('ContentController', function ($scope, $routeParams, ContentService) {
+    $scope.contents = ContentService.query({id: $routeParams.id});
+
+    //Hangman
+    
+});

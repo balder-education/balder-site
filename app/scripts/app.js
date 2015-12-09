@@ -29,18 +29,17 @@ balderSiteApp.config(function($routeProvider, $mdThemingProvider) {
             templateUrl: 'views/main.html',
           	controller: 'MainController'
   })
-  .when('/lesson', {
-            templateUrl: 'views/lesson.html',
-          	controller: 'LessonController'
-  })
   .when('/class', {
             templateUrl: 'views/class.html',
           	controller: 'ClassController'
   })
-  .when('/class/:id', {
-            templateUrl: 'views/class.html',
-            controller: 'ClassController'
-
+  .when('/lesson/:id', {
+            templateUrl: 'views/lesson.html',
+          	controller: 'LessonController'
+  })
+  .when('/content/:id', {
+            templateUrl: 'views/content.html',
+            controller: 'ContentController'
   }).otherwise({ redirectTo: '/login'});
 
   var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {

@@ -7,6 +7,6 @@
  * # LessoncontrollerCtrl
  * Controller of the balderSiteApp
  */
-balderSiteApp.controller('LessonController', function ($scope, LessonService) {
-    $scope.lessons = LessonService.query();
+balderSiteApp.controller('LessonController', function ($scope, $routeParams, LessonService) {
+  $scope.lessons = LessonService.query({id: $routeParams.id});
 });

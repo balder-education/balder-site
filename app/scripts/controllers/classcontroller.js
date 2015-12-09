@@ -7,9 +7,6 @@
  * # ClasscontrollerCtrl
  * Controller of the balderSiteApp
  */
-balderSiteApp.controller('ClassController', function ($scope) {
-    $scope.lesson = {
-        name: 'name1',
-        description: 'description1'
-      };
-  });
+balderSiteApp.controller('ClassController', function ($scope, ClassService) {
+    $scope.classes = ClassService.query();
+});

@@ -1,15 +1,15 @@
 <div ng-controller="LessonController">
   <md-content>
-    <md-list>
-      <md-list-item class="md-3-line" ng-repeat="lesson in lessons">
-        <!--img ng-src="{{item.face}}?{{$index}}" class="face" alt="{{item.who}}"-->
-        <div class="md-list-item-text">
-          <h3>{{lesson.name}}</h3>
-    			<h4>{{lesson.description}}</h4>
-    			<p><strong><a href="/#/class/{{lesson.classId}}">Ver detalhes</a></strong></p>
-        </div>
-        <md-divider md-inset ng-if="!$last"></md-divider>
-      </md-list-item>
-    </md-list>
+    <md-grid-list md-gutter="1em" md-row-height="250px" md-cols="4">
+     <md-grid-tile ng-repeat="lesson in lessons | filter:searchText" style="border: 1px solid #eee" class="repeated-item" ng-click="goToSite(site)">
+         <md-content>
+           <h3>{{lesson.name}}</h3>
+           <h4>{{lesson.description}}</h4>
+           <img src="{{lesson.image}}" width="150" height="150"/>
+         </md-content>
+         <md-grid-tile-footer>
+           <a href="/#/content/{{lesson.classId}}"><h3>Ver detalhes</h3></a>
+         </md-grid-tile-footer>
+     </md-grid-tile>
   </md-content>
 </div>

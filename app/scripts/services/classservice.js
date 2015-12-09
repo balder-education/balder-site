@@ -13,7 +13,7 @@ balderSiteApp.factory('ClassService', function ($resource, API_BASE_URL) {
               }, {
               query : {
                 method : 'GET',
-                isArray : false
+                isArray : true
               },
               get : {
                 method : 'GET'

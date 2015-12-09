@@ -9,29 +9,32 @@
  */
 balderSiteApp.service('LessonService', function ($resource, API_BASE_URL) {
   return $resource(API_BASE_URL + '/lessons/clazz/:id', {
-              id : '@id'
-              }, {
-              query : {
-                method : 'GET',
-                isArray : true
-              },
-              get : {
-                method : 'GET'
-              },
-              remove : {
-                method : 'DELETE',
-                params : {
-                  id : '@id'
-                }
-              },
-              update : {
-                method : 'PUT',
-                params : {
-                  id : '@id'
-                }
-              },
-              add : {
-                method : 'POST'
+            id : '@id'
+            }, {
+            query : {
+              method : 'GET',
+              isArray : true,
+              params : {
+                id : '@id'
               }
-    });
+            },
+            get : {
+              method : 'GET'
+            },
+            remove : {
+              method : 'DELETE',
+              params : {
+                id : '@id'
+              }
+            },
+            update : {
+              method : 'PUT',
+              params : {
+                id : '@id'
+              }
+            },
+            add : {
+              method : 'POST'
+            }
+        });
   });
