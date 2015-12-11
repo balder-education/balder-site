@@ -7,7 +7,18 @@
  * # ContentcontrollerCtrl
  * Controller of the balderSiteApp
  */
-balderSiteApp.controller('ContentController', function ($scope, $http, $routeParams, ContentService, API_BASE_URL, API_STATISTICS_APP_URL) {
+balderSiteApp.controller('ContentController', function ($scope, $http, $routeParams, ContentByLessonService, API_BASE_URL, API_STATISTICS_APP_URL) {
+   $scope.contents = ContentByLessonService.query({id: $routeParams.id});
+});
+
+/**
+ * @ngdoc function
+ * @name balderSiteApp.controller:ContentcontrollerCtrl
+ * @description
+ * # ContentcontrollerCtrl
+ * Controller of the balderSiteApp
+ */
+balderSiteApp.controller('ContentDetailsController', function ($scope, $http, $routeParams, ContentService, API_BASE_URL, API_STATISTICS_APP_URL) {
    ContentService.get({id: $routeParams.id}, function(data) {
       $scope.secretWord = data.resultWord;
       $scope.content = data;

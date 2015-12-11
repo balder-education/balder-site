@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name balderSiteApp.LessonService
+ * @name balderSiteApp.LessonByClassService
  * @description
- * # LessonService
+ * # LessonByClassService
  * Service in the balderSiteApp.
  */
-balderSiteApp.service('LessonService', function ($resource, API_BASE_URL) {
+balderSiteApp.service('LessonByClassService', function ($resource, API_BASE_URL) {
   return $resource(API_BASE_URL + '/lessons/clazz/:id', {
             id : '@id'
             }, {
@@ -17,24 +17,42 @@ balderSiteApp.service('LessonService', function ($resource, API_BASE_URL) {
               params : {
                 id : '@id'
               }
-            },
-            get : {
-              method : 'GET'
-            },
-            remove : {
-              method : 'DELETE',
-              params : {
-                id : '@id'
-              }
-            },
-            update : {
-              method : 'PUT',
-              params : {
-                id : '@id'
-              }
-            },
-            add : {
-              method : 'POST'
             }
         });
   });
+
+  /**
+   * @ngdoc service
+   * @name balderSiteApp.LessonService
+   * @description
+   * # LessonService
+   * Service in the balderSiteApp.
+   */
+  balderSiteApp.service('LessonService', function ($resource, API_BASE_URL) {
+    return $resource(API_BASE_URL + '/lessons/:id', {
+              id : '@id'
+              }, {
+              query : {
+                method : 'GET',
+                isArray : true
+              },
+              get : {
+                method : 'GET'
+              },
+              remove : {
+                method : 'DELETE',
+                params : {
+                  id : '@id'
+                }
+              },
+              update : {
+                method : 'PUT',
+                params : {
+                  id : '@id'
+                }
+              },
+              add : {
+                method : 'POST'
+              }
+          });
+    });

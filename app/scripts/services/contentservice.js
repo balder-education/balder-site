@@ -7,7 +7,7 @@
  * # ContentService
  * Service in the balderSiteApp.
  */
-balderSiteApp.service('ContentService', function ($resource, API_BASE_URL) {
+balderSiteApp.service('ContentByLessonService', function ($resource, API_BASE_URL) {
   return $resource(API_BASE_URL + '/contents/lesson/:id', {
             id : '@id'
             }, {
@@ -17,6 +17,24 @@ balderSiteApp.service('ContentService', function ($resource, API_BASE_URL) {
               params : {
                 id : '@id'
               }
+            }
+        });
+});
+
+/**
+ * @ngdoc service
+ * @name balderSiteApp.ContentService
+ * @description
+ * # ContentService
+ * Service in the balderSiteApp.
+ */
+balderSiteApp.service('ContentService', function ($resource, API_BASE_URL) {
+  return $resource(API_BASE_URL + '/contents/:id', {
+            id : '@id'
+            }, {
+            query : {
+              method : 'GET',
+              isArray : true
             },
             get : {
               method : 'GET'

@@ -1,0 +1,43 @@
+<div ng-controller="ContentDetailsController">
+
+
+{{content.description}}
+ <img src="{{content.image}}" width="150" height="150"/>
+  <!--md-content>
+    <md-grid-list md-gutter="1em" md-row-height="250px" md-cols="1">
+     <md-grid-tile ng-repeat="content in contents | filter:searchText" style="border: 1px solid #eee" class="repeated-item" ng-click="goToSite(site)">
+         <md-content>
+           <h4>{{content.description}}->{{content.resultWord}}</h4>
+           <img src="{{content.image}}" width="150" height="150"/>
+         </md-content>
+         <md-grid-tile-footer>
+           <a href="/#/lesson/{{content.lessonId}}"><h3>Ver detalhes</h3></a>
+         </md-grid-tile-footer>
+     </md-grid-tile>
+  </md-content-->
+  <div class="container-fluid">
+    <div class="well">
+      <div class="secretWord">
+        <ul class="list-inline">
+          <li ng-repeat="letter in secretWord">
+            <span ng-hide="letter.chosen">_</span>
+            <span ng-show="letter.chosen">{{ letter.name }}</span>
+          </li>
+        </ul>
+
+        <div class="letters">
+          <ul class="list-inline">
+            <li ng-repeat="letter in letters">
+              <button class="btn btn-primary letter-button"
+                      ng-disabled="letter.chosen"
+                      ng-click="try(letter);">{{letter.name}}</button>
+            </li>
+          </ul>
+        </div>
+        <span ng-show="win">Parabens</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</div>

@@ -1,0 +1,15 @@
+<div ng-controller="ContentController">
+  <md-content>
+    <md-grid-list md-gutter="1em" md-row-height="250px" md-cols="4">
+     <md-grid-tile ng-repeat="content in contents | filter:searchText" style="border: 1px solid #eee" class="repeated-item" ng-click="goToSite(site)">
+         <md-content>
+           <h3>{{content.name}}</h3>
+           <h4>{{content.description}}</h4>
+           <img src="{{content.image}}" width="150" height="150"/>
+         </md-content>
+         <md-grid-tile-footer>
+            <span ng-show="content.finished">Concluido</span>
+         </md-grid-tile-footer>
+     </md-grid-tile>
+  </md-content>
+</div>

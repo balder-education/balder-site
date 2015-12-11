@@ -34,12 +34,24 @@ balderSiteApp.config(function($routeProvider, $mdThemingProvider) {
             templateUrl: 'views/class.html',
           	controller: 'ClassController'
   })
+  .when('/lesson', {
+            templateUrl: 'views/lessons.html',
+            controller: 'LessonController'
+  })
   .when('/lesson/:id', {
             templateUrl: 'views/lesson.html',
           	controller: 'LessonController'
   })
+  .when('/content', {
+            templateUrl: 'views/contents.html',
+            controller: 'ContentController'
+  })
   .when('/content/:id', {
             templateUrl: 'views/content.html',
+            controller: 'ContentController'
+  })
+  .when('/content/:id/detail', {
+            templateUrl: 'views/content-details.html',
             controller: 'ContentController'
   }).otherwise({ redirectTo: '/login'});
 
