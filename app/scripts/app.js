@@ -13,6 +13,7 @@ function DialogController($scope, $mdDialog) {
 };
 
 balderSiteApp.constant("API_BASE_URL", "http://localhost:7777/app");
+balderSiteApp.constant("API_STATISTICS_APP_URL", "http://localhost:8989/api");
 
 balderSiteApp.run(function($http) {
 	//$http.defaults.headers.common.Authorization = 'Basic cm9vdDpyb290==';

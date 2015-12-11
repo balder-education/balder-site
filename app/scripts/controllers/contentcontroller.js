@@ -7,7 +7,7 @@
  * # ContentcontrollerCtrl
  * Controller of the balderSiteApp
  */
-balderSiteApp.controller('ContentController', function ($scope, $http, $routeParams, ContentService, API_BASE_URL) {
+balderSiteApp.controller('ContentController', function ($scope, $http, $routeParams, ContentService, API_BASE_URL, API_STATISTICS_APP_URL) {
    ContentService.get({id: $routeParams.id}, function(data) {
       $scope.secretWord = data.resultWord;
       $scope.content = data;
@@ -49,8 +49,17 @@ balderSiteApp.controller('ContentController', function ($scope, $http, $routePar
       }
 
       if ($scope.win) {
+
+        //Site - core
         $http.put(API_BASE_URL + '/contents/'+ $scope.contentId +'/status/' +  $scope.status).success(function (data) {
-            contole.log(data);
+            console.log(data);
+        }).error(function () {
+            alert("an unexpected error ocurred!");
+        });
+
+        //Statistics
+        $http.put(API_STATISTICS_APP_URL + '/stundents/'+ $scope.contentId +'/lesson/' +  $scope.contentId + '/complete').success(function (data) {
+            console.log(data);
         }).error(function () {
             alert("an unexpected error ocurred!");
         });
