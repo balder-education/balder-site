@@ -1,10 +1,10 @@
 <div ng-controller="ClassController">
   <md-content>
-    <md-grid-list md-gutter="1em" md-row-height="250px" md-cols="1">
+    <md-grid-list md-gutter="1em" md-row-height="350px" md-cols="1">
      <md-grid-tile ng-repeat="class in classes | filter:searchText" style="border: 1px solid #eee" class="repeated-item" ng-click="goToSite(site)">
          <md-content>
            <h4>{{class.description}}</h4>
-           <img src="{{class.image}}" width="150" height="150"/>
+           <a href="/#/lesson/{{class.id}}"><img src="{{class.image}}" width="850" height="350"/></a>
          </md-content>
          <md-grid-tile-footer>
            <a href="/#/lesson/{{class.id}}"><h3>Ver detalhes</h3></a>
