@@ -1,32 +1,43 @@
 <div ng-controller="ContentDetailsController">
+  <md-card>
+      <h2 class="md-title">{{content.description}}</h2>
+      <br/>
+      <img src="{{content.image}}" class="md-card-image" alt="Washed Out">
+      <md-card-content>
+        <p>
+          <div class="secretWord">
+            <ul class="list-inline">
+              <li ng-repeat="letter in secretWord">
+                <span ng-hide="letter.chosen">_</span>
+                <span ng-show="letter.chosen">{{ letter.name }}</span>
+              </li>
+            </ul>
 
-
-
-  <div class="container-fluid">
-    <div class="well">
-      {{content.description}}<br/>
-       <img src="{{content.image}}" width="250" height="250"/>
-      <div class="secretWord">
-        <ul class="list-inline">
-          <li ng-repeat="letter in secretWord">
-            <span ng-hide="letter.chosen">_</span>
-            <span ng-show="letter.chosen">{{ letter.name }}</span>
-          </li>
-        </ul>
-
-        <div class="letters">
-          <ul class="list-inline">
-            <li ng-repeat="letter in letters">
-              <button class="btn btn-primary letter-button"
-                      ng-disabled="letter.chosen"
-                      ng-click="try(letter);">{{letter.name}}</button>
-            </li>
-          </ul>
-        </div>
-        <span ng-show="win">Parabens</span>
+            <div class="letters">
+              <ul class="list-inline">
+                <li ng-repeat="letter in letters">
+                  <button class="btn btn-primary letter-button"
+                          ng-disabled="letter.chosen"
+                          ng-click="try(letter);">{{letter.name}}</button>
+                </li>
+              </ul>
+            </div>
+          <!-- Modal -->
+            <div class="modal">
+              <div class="inner-modal">
+                <div class="content">
+                    <span ng-show="win">Parabens</span>
+                </div>
+              </div>
+            </div>
+          <!-- Modal -->
+          </div>
+        </p>
+      </md-card-content>
+      <div class="md-actions" layout="row" layout-align="start center">
+        <md-button>Close</md-button>
+        <md-button>Next</md-button>
       </div>
-    </div>
-  </div>
-
+    </md-card>
 </body>
 </div>
